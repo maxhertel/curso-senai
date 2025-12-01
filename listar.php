@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Lista</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
-</head>
-
+<?php 
+include_once('./partes/header.php')
+?>
 <body>
     <div class="contatiner m-5">
         <div class="row">
@@ -31,8 +21,6 @@
                         </thead>
                         <tbody>
                             <?php
-
-
                             include_once './classes/Pessoa.php';
                             Pessoa::exibirLinhasDaTabela();
                             //Isso significa que ele:
@@ -54,7 +42,6 @@
 
 
 
-    <script src="" async defer></script>
-</body>
-
-</html>
+  <?php
+  include_once './partes/footer.php'
+  ?>

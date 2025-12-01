@@ -1,19 +1,10 @@
-<?php
-error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE & ~E_DEPRECATED);
+
+<?php 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+include_once('./partes/header.php')
 ?>
-
-<!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Home</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-</head>
 
 <body>
   <div class="container">
@@ -41,14 +32,14 @@ error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE & ~E_DEPRECATED);
             // =================== MAIN ======================
 
             $pessoa = new Pessoa(
-              $_GET['nomeCompleto'],
-              $_GET['altura'],
-              $_GET['peso'],
-              $_GET['idade'],
-              $_GET['genero']
+              $_GET['nomeCompleto'] ?? "",
+              $_GET['altura']?? "",
+              $_GET['peso']?? "",
+              $_GET['idade']?? "",
+              $_GET['genero']?? ""
             );
-            $pessoa->exibir();
-            $pessoa->salvarCSV();
+            //$pessoa->exibir();
+            // /$pessoa->salvarCSV();
 
 
             ?>
@@ -61,6 +52,7 @@ error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE & ~E_DEPRECATED);
       <a href="/listar.php" class="card-link">Ver todos</a>
   </div>
   </div>
-</body>
 
-</html>
+  <?php
+  include_once './partes/footer.php'
+  ?>
