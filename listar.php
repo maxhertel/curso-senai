@@ -12,6 +12,7 @@ include_once('./partes/header.php')
                     <table class="table table-dark">
                         <thead>
                             <tr>
+                                <td>Id</td>
                                 <td>Nome</td>
                                 <td>Altura</td>
                                 <td>Peso</td>

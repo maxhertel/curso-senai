@@ -129,6 +129,7 @@
                         echo '<td >'. $linha[2].'</td>';
                         echo '<td >'. $linha[3].'</td>';
                         echo '<td >'. $linha[4].'</td>';     
+                        echo '<td >'. $linha[5].'</td>';     
                     echo '</tr>';               
                 }
                 fclose($arqPessoas);
@@ -142,7 +143,20 @@
             public function salvarCSV() : void {
                 $arquivo = __DIR__ . '/../pessoas.csv';
 
+                $id = 0;
+                $ultimoId = 0;
+
+                 $arquivo = __DIR__ . '/../pessoas.csv';
+                $arqPessoas = fopen($arquivo,'r');
+                //percore tudo:
+                while (($linha = fgetcsv($arqPessoas,1000,";")) !== false) {
+   
+                        $ultimoId = $linha[0];               
+                }
+                $id = $ultimoId+1; 
+                fclose($arqPessoas);
                 $dados = [
+                    $id,
                     $this->nomeCompleto,
                     $this->altura,
                     $this->peso,

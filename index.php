@@ -38,18 +38,21 @@ include_once('./partes/header.php')
               $_GET['idade']?? "",
               $_GET['genero']?? ""
             );
-            //$pessoa->exibir();
-            // /$pessoa->salvarCSV();
+            $pessoa->exibir();
+            if(!empty($_GET['nomeCompleto'] )){
+              $pessoa->salvarCSV();
+            }
+            
 
 
             ?>
             </div>
-            
+            <a href="/listar.php" class="card-link">Ver todos</a>
             
           </div>
         </div>
       </div>
-      <a href="/listar.php" class="card-link">Ver todos</a>
+      
   </div>
   </div>
 
